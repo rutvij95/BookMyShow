@@ -1,20 +1,20 @@
 package com.example.bookmyshow.controller;
 
-import com.example.bookmyshow.models.City;
-import com.example.bookmyshow.service.CityService;
+import com.example.bookmyshow.models.Movie;
+import com.example.bookmyshow.service.MovieService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class CityController {
+public class MovieController {
 
     @Autowired
-    CityService cityService;
+    MovieService movieService;
 
-    @PostMapping("/city/{cityName}")
-    public City addCity(@PathVariable("cityName") String cityName) {
-        return cityService.addCity(cityName);
+    @PostMapping("/movie/{movieName}")
+    public Movie addMovie(@PathVariable String movieName) {
+        return movieService.addMovie(movieName);
     }
 }
